@@ -18,9 +18,6 @@ var _connect = require("./connect");
 
 var _connect2 = _interopRequireDefault(_connect);
 
-var Action = _Action2["default"];
-exports.Action = Action;
-var Store = _Store2["default"];
-exports.Store = Store;
-var connect = _connect2["default"];
-exports.connect = connect;
+exports.Action = _Action2["default"];
+exports.Store = _Store2["default"];
+exports.connect = _connect2["default"];

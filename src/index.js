@@ -1,7 +1,9 @@
-import GriffinAction from "./Action";
-import GriffinStore from "./Store";
-import GriffinConnect from "./connect";
+import Action from "./Action";
+import Store from "./Store";
+import connect from "./connect";
 
-export const Action = GriffinAction;
-export const Store = GriffinStore;
-export const connect = GriffinConnect;
+export {
+  Action
+, Store
+, connect
+}

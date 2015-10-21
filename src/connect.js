@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function(Component, stateMapping = {}) {
+export default function(stateMapping) {
+  // for some reason a default argument wasn't compiling correctly...
+  stateMapping = stateMapping || {};
+
   function getState() {
     const newState = {};
 
@@ -11,37 +14,39 @@ export default function(Component, stateMapping = {}) {
     return newState;
   }
 
-  return class extends React.Component {
-    constructor(props) {
-      super(props);
+  return (Component) => {
+    return class extends React.Component {
+      constructor(props) {
+        super(props);
 
-      this.state = getState();
-      this.listeners = [];
-    }
+        this.state = getState();
+        this.listeners = [];
+      }
 
-    componentDidMount() {
-      Object.keys(stateMapping).map((key) => {
-        let store = stateMapping[key];
+      componentDidMount = () => {
+        this.listeners = Object.keys(stateMapping).map((key) => {
+          let store = stateMapping[key];
 
-        this.listeners.push(store.subscribe(this.handleStateChange));
-      });
-    }
+          store.subscribe(this.handleStateChange);
+        });
+      }
 
-    componentWillUnmount() {
-      this.listeners.forEach((unsubscribe) => {
-        unsubscribe();
-      });
-    };
+      componentWillUnmount = () => {
+        this.listeners.forEach((unsubscribe) => {
+          unsubscribe();
+        });
+      };
 
-    handleStateChange() {
-      this.setState(getState());
-    }
+      handleStateChange = () => {
+        this.setState(getState());
+      }
 
-    render() {
-      return <Component
-        {...this.props}
-        {...this.state}
-      />
+      render = () => {
+        return <Component
+          {...this.props}
+          {...this.state}
+        />
+      }
     }
   }
 }
