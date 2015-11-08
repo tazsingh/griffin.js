@@ -27,7 +27,7 @@ export default function(stateMapping) {
         this.listeners = Object.keys(stateMapping).map((key) => {
           let store = stateMapping[key];
 
-          store.subscribe(this.handleStateChange);
+          return store.subscribe(this.handleStateChange);
         });
       }
 
