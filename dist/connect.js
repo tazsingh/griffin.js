@@ -47,7 +47,7 @@ exports["default"] = function (stateMapping) {
           _this.listeners = Object.keys(stateMapping).map(function (key) {
             var store = stateMapping[key];
 
-            store.subscribe(_this.handleStateChange);
+            return store.subscribe(_this.handleStateChange);
           });
         };
 

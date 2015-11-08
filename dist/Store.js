@@ -52,7 +52,7 @@ var _default = (function () {
       return function () {
         var index = _this2.listeners.indexOf(listener);
 
-        listeners.splice(index, 1);
+        _this2.listeners.splice(index, 1);
       };
     }
   }, {

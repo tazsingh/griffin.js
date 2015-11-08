@@ -45,7 +45,7 @@ export default class {
     return () => {
       let index = this.listeners.indexOf(listener);
 
-      listeners.splice(index, 1);
+      this.listeners.splice(index, 1);
     };
   }
 
