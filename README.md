@@ -32,9 +32,9 @@ Griffin is a set of tools to assist with building Flux applications. It reduces 
 
 ## Example App
 
-[**Rets.ly/Zillow Hackathon**](https://github.com/enginuitygroup/retsly_hackathon) - A team of three built an app in 24 hours using Griffin.js, WebPack, React Router, and a few other tools.
+[**TorontoJS Website**](https://github.com/torontojs/torontojs.com) - Built a promotional website for TorontoJS to pull in JavaScript events from Toronto and the surrounding area. It also displays videos and general information about TorontoJS while serving as a base on which to expand upon. Uses Griffin.js, WebPack, React Router, Babel.js, and React Transform.
 
-Another example coming.
+[**Rets.ly/Zillow Hackathon**](https://github.com/enginuitygroup/retsly_hackathon) - A team of three built an app in 24 hours using Griffin.js, WebPack, React Router, and a few other tools.
 
 ## Disussion
 
